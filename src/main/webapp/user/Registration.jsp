@@ -1,0 +1,23 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: emygdio
+  Date: 15/11/2020
+  Time: 07:54
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<html>
+<head>
+    <title>Portfolio Registration</title>
+</head>
+<body>
+<h4>Complete and submit the form to create your own portfolio.</h4>
+<s:form action="Register">
+    <s:textfield name="userName" label="Username"/>
+    <s:password name="password" label="Password"/>
+    <s:textfield name="portfolioName" label="Enter a name for your porfolio"/>
+    <s:submit/>
+</s:form>
+</body>
+</html>

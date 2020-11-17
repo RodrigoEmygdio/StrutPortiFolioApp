@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="portfolio" extends="struts-default" namespace="/">
+        <default-action-ref name="PortfolioHomePage"></default-action-ref>
+        <action name="PortfolioHomePage">
+            <result>PortfolioHomePage.jsp</result>
+        </action>
+    </package>
+
+    <include file="user-management.xml"/>
+</struts>

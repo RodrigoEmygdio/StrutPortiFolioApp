@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="userManagementPublic" namespace="/user" extends="struts-default">
+        <action name="Registration">
+            <result>/user/Registration.jsp</result>
+        </action>
+        <action name="Register" class="org.example.portfolio.usermanagement.Register">
+            <result>/user/RegistrationSuccess.jsp</result>
+            <result name="input">/user/Registration.jsp</result>
+        </action>
+    </package>
+
+    <package name="userManagementSecure" namespace="/user/secure" extends="portfolio">
+        <action name="AdminPortfolio">
+            <result>/user/AdminPortfolio.jsp</result>
+        </action>
+    </package>
+</struts>
