@@ -1,10 +1,11 @@
 package org.example.portfolio.usermanagement.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class User {
+public class User implements Serializable {
     private String username;
     private String password;
     private String portfolioName;
@@ -14,7 +15,7 @@ public class User {
     private String lastName;
     private String email;
     private boolean receiveJunkMail;
-    private Map portfolios = new HashMap();
+    private Map<String, Portfolio> portfolios = new HashMap<>();
 
     public String getUsername() {
         return username;
@@ -88,11 +89,11 @@ public class User {
         this.receiveJunkMail = receiveJunkMail;
     }
 
-    public Map getPortfolios() {
+    public Map<String,Portfolio> getPortfolios() {
         return portfolios;
     }
 
-    public void setPortfolios(Map portfolios) {
+    public void setPortfolios(Map<String, Portfolio> portfolios) {
         this.portfolios = portfolios;
     }
 }

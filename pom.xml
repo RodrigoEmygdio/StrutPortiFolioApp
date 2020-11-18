@@ -17,11 +17,17 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.4.1.Final</version>
+        </dependency>
     </dependencies>
 
     <properties>
         <struts2-bom.version>2.5.25</struts2-bom.version>
         <log4j2.version>2.10.0</log4j2.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <packaging>war</packaging>
@@ -63,6 +69,14 @@
                         <srcTarget>src/main/webapp/WEB-INF/web.xml</srcTarget>
                     </scanTargets>
 
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
