@@ -1,46 +1,45 @@
 package org.example.portfolio.usermanagement;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import org.example.portfolio.usermanagement.entities.User;
 import org.example.portfolio.usermanagement.services.PortfolioService;
 
-public class Register extends ActionSupport {
+public class Register extends ActionSupport implements ModelDriven<User> {
 
-    private User user;
+    private User user = new User();
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     @Override
 
     public void validate() {
-        if (getUser().getPassword().length() == 0) {
-            addFieldError("user.username", getText("password.required"));
+        if (user.getPassword().length() == 0) {
+            addFieldError("username", getText("password.required"));
         }
-        if (getUser().getUsername().length() == 0) {
-            addFieldError("user.password", getText("username.required"));
+        if (user.getUsername().length() == 0) {
+            addFieldError("password", getText("username.required"));
         }
-        if (getUser().getPortfolioName().length() == 0) {
-            addFieldError("user.portfolioName", getText("portfolioName.required"));
+        if (user.getPortfolioName().length() == 0) {
+            addFieldError("portfolioName", getText("portfolioName.required"));
         }
         if (getPortfolioService().userExists(user.getUsername())) {
-            addFieldError("user.username", "user.exists");
+            addFieldError("username", "user.exists");
         }
     }
 
     @Override
     public String execute() throws Exception {
-        getPortfolioService().createAccount(getUser());
+        getPortfolioService().createAccount(user);
         return SUCCESS;
     }
 
 
     public PortfolioService getPortfolioService() {
         return new PortfolioService();
+    }
+
+    @Override
+    public User getModel() {
+        return user;
     }
 }

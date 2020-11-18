@@ -15,9 +15,9 @@
 <body>
 <h4>Complete and submit the form to create your own portfolio.</h4>
 <s:form action="Register">
-    <s:textfield name="user.username" label="Username"/>
-    <s:password name="user.password" label="Password"/>
-    <s:textfield name="user.portfolioName" label="Enter a name for your porfolio"/>
+    <s:textfield name="username" label="Username"/>
+    <s:password name="password" label="Password"/>
+    <s:textfield name="portfolioName" label="Enter a name for your porfolio"/>
     <s:submit/>
 </s:form>
 </body>
