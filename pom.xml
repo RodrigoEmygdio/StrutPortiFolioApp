@@ -51,6 +51,8 @@
         </dependencies>
     </dependencyManagement>
 
+
+
     <build>
         <finalName>portifolio-app</finalName>
         <plugins>
